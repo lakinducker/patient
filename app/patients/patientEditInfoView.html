@@ -1,0 +1,81 @@
+<form class="form-horizontal" name="patientForm"
+      novalidate>
+    <fieldset>
+        <legend>Basic Patient Information</legend>
+
+        <div class="form-group"
+             ng-class="{'has-error':patientForm.inputPatientInitials.$invalid &&
+                                    patientForm.inputPatientInitials.$dirty}">
+            <label class="col-md-2 control-label" for="inputPatientInitials">Initials</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputPatientInitials"
+                       name="inputPatientInitials"
+                       ui-mask="AAA (required)"
+                       ng-model="vm.patient.patientInitials"
+                       required>
+            </div>
+            <span class="help-block has-error"
+                  ng-show="patientForm.inputPatientCode.$invalid ">
+                    Patient Initials are required
+            </span>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="randomizationRadios">Randomization</label>
+            <div class="col-md-4" id="randomizationRadios">
+                <div class="radio">
+                    <label>
+                        <input
+                                id="randomizationA"
+                                name="randomization"
+                                type="radio"
+                                value="A"
+                                ng-model="vm.patient.randomization">
+                        Group A
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="randomizationB"
+                                name="randomization"
+                                type="radio"
+                                value="B"
+                                ng-model="vm.patient.randomization">
+                        Group B
+                    </label>
+                </div>
+            </div>
+            <span class="help-block has-error"
+                  ng-show="patientForm.imageUrl.$invalid ">
+                    Randomization is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(patientForm.$valid)"
+                                ng-disabled="patientForm.$invalid">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+

@@ -1,0 +1,231 @@
+<form class="form-horizontal" name="patientPreForm"
+      novalidate>
+    <fieldset>
+        <legend>Preoperative Evaluation</legend>
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="diagnosisRadios">Diagnosis</label>
+            <div class="col-md-4" id="diagnosisRadios">
+                <div class="radio">
+                    <label>
+                        <input
+                                id="diagnosis1"
+                                name="diagnosis"
+                                type="radio"
+                                value="1"
+                                ng-model="vm.patient.diagnosis">
+                        Disc failure or prolapse
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="diagnosis2"
+                                name="diagnosis"
+                                type="radio"
+                                value="2"
+                                ng-model="vm.patient.diagnosis">
+                        Osteophytic spondylosis
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="diagnosis3"
+                                name="diagnosis"
+                                type="radio"
+                                value="3"
+                                ng-model="vm.patient.diagnosis">
+                        Trauma induced instability
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="diagnosis4"
+                                name="diagnosis"
+                                type="radio"
+                                value="3"
+                                ng-model="vm.patient.diagnosis">
+                        Pseudoarthrosis
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="diagnosis5"
+                                name="diagnosis"
+                                type="radio"
+                                value="3"
+                                ng-model="vm.patient.diagnosis">
+                        Other
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="nurickRadios">Spinal Cord Evaluation (Nurick Grade)</label>
+            <div class="col-md-4" id="nurickRadios">
+                <div class="radio">
+                    <label>
+                        <input
+                                id="nurick0"
+                                name="nurick"
+                                type="radio"
+                                value="0"
+                                ng-model="vm.patient.nurick">
+                        Grade 0: No myelopathy signs
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="nurick1"
+                                name="nurick"
+                                type="radio"
+                                value="1"
+                                ng-model="vm.patient.nurick">
+                        Grade 1: Myelopathy signs only
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="nurick2"
+                                name="nurick"
+                                type="radio"
+                                value="2"
+                                ng-model="vm.patient.nurick">
+                        Grade 2: Slight difficulty walking
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="nurick3"
+                                name="nurick"
+                                type="radio"
+                                value="3"
+                                ng-model="vm.patient.nurick">
+                        Grade 3: Walking difficulty and can't work
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="nurick4"
+                                name="nurick"
+                                type="radio"
+                                value="4"
+                                ng-model="vm.patient.nurick">
+                        Grade 4: Needs frame walker
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input
+                                id="nurick5"
+                                name="nurick"
+                                type="radio"
+                                value="5"
+                                ng-model="vm.patient.nurick">
+                        Grade 5: Bedridden
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group"
+             ng-class="{'has-error': patientPreForm.odi_00.$invalid &&
+                                     patientPreForm.odi_00.$dirty}">
+            <label class="col-md-2 control-label" for="odi_00">ODI</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="odi_00"
+                       name="odi_00"
+                       type="number"
+                       min="0"
+                       max="100"
+                       placeholder="ODI Score"
+                       ng-model="vm.patient.odi_00"
+                       style="text-align:right" />
+            </div>
+            <span class="help-block "
+                  ng-show="patientPreForm.odi_00.$invalid &&
+                           patientPreForm.odi_00.$dirty">
+                ODI Score must be a valid number (0-100) or empty.
+            </span>
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error': patientPreForm.vas_back_00.$invalid &&
+                                     patientPreForm.vas_back_00.$dirty}">
+            <label class="col-md-2 control-label" for="vas_back_00">Back Pain VAS</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="vas_back_00"
+                       name="vas_back_00"
+                       type="number"
+                       min="0"
+                       max="100"
+                       placeholder="Back Pain VAS Score"
+                       ng-model="vm.patient.vas_back_00"
+                       style="text-align:right" />
+            </div>
+            <span class="help-block "
+                  ng-show="patientPreForm.vas_back_00.$invalid &&
+                           patientPreForm.vas_back_00.$dirty">
+                Back Pain VAS Score must be a valid number (0-100) or empty.
+            </span>
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error': patientPreForm.vas_leg_00.$invalid &&
+                                     patientPreForm.vas_leg_00.$dirty}">
+            <label class="col-md-2 control-label" for="vas_leg_00">Leg Pain VAS</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="vas_leg_00"
+                       name="vas_leg_00"
+                       type="number"
+                       min="0"
+                       max="100"
+                       placeholder="Leg Pain VAS Score"
+                       ng-model="vm.patient.vas_leg_00"
+                       style="text-align:right" />
+            </div>
+            <span class="help-block "
+                  ng-show="patientPreForm.vas_leg_00.$invalid &&
+                           patientPreForm.vas_leg_00.$dirty">
+                Leg Pain VAS Score must be a valid number (0-100) or empty.
+            </span>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(patientPreForm.$valid)"
+                                ng-disabled="patientPreForm.$invalid">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+

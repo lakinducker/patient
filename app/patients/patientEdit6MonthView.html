@@ -1,0 +1,97 @@
+<form class="form-horizontal" name="patient6MonthForm"
+      novalidate>
+    <fieldset>
+        <legend>6 Month Evaluation</legend>
+
+
+        <div class="form-group"
+             ng-class="{'has-error': patient6MonthForm.odi_06.$invalid &&
+                                     patient6MonthForm.odi_06.$dirty}">
+            <label class="col-md-2 control-label" for="odi_06">ODI</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="odi_06"
+                       name="odi_06"
+                       type="number"
+                       min="0"
+                       max="100"
+                       placeholder="ODI Score"
+                       ng-model="vm.patient.odi_06"
+                       style="text-align:right" />
+            </div>
+            <span class="help-block "
+                  ng-show="patient6MonthForm.odi_06.$invalid &&
+                           patient6MonthForm.odi_06.$dirty">
+                ODI Score must be a valid number (0-100) or empty.
+            </span>
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error': patient6MonthForm.vas_back_06.$invalid &&
+                                     patient6MonthForm.vas_back_06.$dirty}">
+            <label class="col-md-2 control-label" for="vas_back_06">Back Pain VAS</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="vas_back_06"
+                       name="vas_back_06"
+                       type="number"
+                       min="0"
+                       max="100"
+                       placeholder="Back Pain VAS Score"
+                       ng-model="vm.patient.vas_back_06"
+                       style="text-align:right" />
+            </div>
+            <span class="help-block "
+                  ng-show="patient6MonthForm.vas_back_06.$invalid &&
+                           patient6MonthForm.vas_back_06.$dirty">
+                Back Pain VAS Score must be a valid number (0-100) or empty.
+            </span>
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error': patient6MonthForm.vas_leg_06.$invalid &&
+                                     patient6MonthForm.vas_leg_06.$dirty}">
+            <label class="col-md-2 control-label" for="vas_leg_06">Leg Pain VAS</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="vas_leg_06"
+                       name="vas_leg_06"
+                       type="number"
+                       min="0"
+                       max="100"
+                       placeholder="Leg Pain VAS Score"
+                       ng-model="vm.patient.vas_leg_06"
+                       style="text-align:right" />
+            </div>
+            <span class="help-block "
+                  ng-show="patient6MonthForm.vas_leg_06.$invalid &&
+                           patient6MonthForm.vas_leg_06.$dirty">
+                Leg Pain VAS Score must be a valid number (0-100) or empty.
+            </span>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(patient6MonthForm.$valid)"
+                                ng-disabled="patient6MonthForm.$invalid">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+

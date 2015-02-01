@@ -1,0 +1,116 @@
+<form class="form-horizontal" name="patientTreatmentForm"
+      novalidate>
+    <fieldset>
+        <legend>Treatment</legend>
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputSurgeryDate">Surgery Date</label>
+
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input class="form-control"
+                           id="inputSurgeryDate"
+                           type="text"
+                           datepicker-popup="MMM dd, yyyy "
+                           is-open="vm.opened"
+                           ng-model="vm.patient.surgeryDate"
+                           required />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default"
+                                ng-click="vm.open($event)">
+                            <i class="glyphicon glyphicon-calendar"/>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputLevelsCheckboxes">Surgery Date</label>
+
+            <div class="col-md-4" id="inputLevelsCheckboxes">
+                <div class="input-group">
+                    <label class="checkbox-inline">
+                        <input
+                                type="checkbox"
+                                id="L1L2"
+                                name="L1L2"
+                                ng-model="vm.patient.L1L2"> L1-L2
+                    </label><br>
+                    <label class="checkbox-inline">
+                        <input
+                                type="checkbox"
+                                id="L2L3"
+                                name="L2L3"
+                                ng-model="vm.patient.L2L3"> L2-L3
+                    </label><br>
+                    <label class="checkbox-inline">
+                        <input
+                                type="checkbox"
+                                id="L3L4"
+                                name="L3L4"
+                                ng-model="vm.patient.L3L4"> L3-L4
+                    </label><br>
+                    <label class="checkbox-inline">
+                        <input
+                                type="checkbox"
+                                id="L4L5"
+                                name="L4L5"
+                                ng-model="vm.patient.L4L5"> L4-L5
+                    </label><br>
+                    <label class="checkbox-inline">
+                        <input
+                                type="checkbox"
+                                id="L5S1"
+                                name="L5S1"
+                                ng-model="vm.patient.L5S1"> L5-S1
+                    </label><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error': patientTreatmentForm.inputOr_time.$invalid &&
+                                     patientTreatmentForm.inputOr_time.$dirty}">
+            <label class="col-md-2 control-label" for="inputOr_time">OR Time (minutes)</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputOr_time"
+                       name="or_time"
+                       type="number"
+                       placeholder="OR Time"
+                       ng-model="vm.patient.or_time"
+                       style="text-align:right" />
+            </div>
+            <span class="help-block "
+                  ng-show="patientTreatmentForm.inputOr_time.$invalid &&
+                           patientTreatmentForm.inputOr_time.$dirty">
+                OR Time must be a valid number or empty.
+            </span>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(patientTreatmentForm.$valid)"
+                                ng-disabled="patientTreatmentForm.$invalid">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+

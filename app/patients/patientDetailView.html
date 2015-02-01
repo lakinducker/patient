@@ -1,0 +1,106 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        {{vm.title}}
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-3">ID:</div>
+                    <div class="col-md-6">{{vm.patient.patientId}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Initials:</div>
+                    <div class="col-md-6">{{vm.patient.patientInitials}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Rand:</div>
+                    <div class="col-md-6">{{vm.patient.randomization}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Surgery:</div>
+                    <div class="col-md-6">{{vm.patient.surgeryDate|date}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Diagnosis:</div>
+                    <div class="col-md-6">{{vm.patient.diagnosis}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Nurick:</div>
+                    <div class="col-md-6">{{vm.patient.nurick}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Levels:</div>
+                    <div class="col-md-6">
+                        <span ng-if="vm.patient.L1L2">L1-L2<br></span>
+                        <span ng-if="vm.patient.L2L3">L2-L3<br></span>
+                        <span ng-if="vm.patient.L3L4">L3-L4<br></span>
+                        <span ng-if="vm.patient.L4L5">L4-L5<br></span>
+                        <span ng-if="vm.patient.L5S1">L5-S1<br></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">OR Time:</div>
+                    <div class="col-md-6">{{vm.patient.or_time}} min.</div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-3">ODI Pre:</div>
+                    <div class="col-md-6">{{vm.patient.odi_00}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">ODI 6m:</div>
+                    <div class="col-md-6">{{vm.patient.odi_06}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">ODI 12m:</div>
+                    <div class="col-md-6">{{vm.patient.odi_12}}<br><br></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">Back VAS Pre:</div>
+                    <div class="col-md-6">{{vm.patient.vas_back_00}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Back VAS 6m:</div>
+                    <div class="col-md-6">{{vm.patient.vas_back_06}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Back VAS 12m:</div>
+                    <div class="col-md-6">{{vm.patient.vas_back_12}}<br><br></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">Leg VAS Pre:</div>
+                    <div class="col-md-6">{{vm.patient.vas_leg_00}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Leg VAS 6m:</div>
+                    <div class="col-md-6">{{vm.patient.vas_leg_06}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Leg VAS 12m:</div>
+                    <div class="col-md-6">{{vm.patient.vas_leg_12}}</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-default"
+           ui-sref="patientList"
+           style="width:80px">
+            <I class="glyphicon glyphicon-chevron-left"></i>
+            Back
+        </a>
+        <a class="btn btn-primary"
+           ui-sref="patientEdit.info({patientId: vm.patient.patientId})"
+           style="width:80px;margin-left:10px">
+            Edit
+        </a>
+    </div>
+</div>

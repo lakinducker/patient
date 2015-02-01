@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        {{vm.title}}
+    </div>
+
+    <div class="panel-body">
+        <div class="wizard">
+            <a ui-sref=".info"
+               ui-sref-active="active">
+                Info
+            </a>
+            <a ui-sref=".pre"
+               ui-sref-active="active">
+                Pre-Op
+            </a>
+            <a ui-sref=".treatment"
+               ui-sref-active="active">
+                Treatment
+            </a>
+            <a ui-sref=".6month"
+               ui-sref-active="active">
+                6 Month
+            </a>
+            <a ui-sref=".12month"
+               ui-sref-active="active">
+                12 Month
+            </a>
+        </div>
+
+        <div ui-view></div>
+    </div>
+
+</div>
