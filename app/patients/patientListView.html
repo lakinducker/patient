@@ -18,7 +18,7 @@
             <tbody>
             <tr ng-repeat="patient in vm.patients">
                 <td>
-                    <a ui-sref="patientDetail({patientId: patient.patientId})">
+                    <a ui-sref="patientEdit.info({patientId: patient.patientId})">
                     {{ patient.patientId}}</a>
                 </td>
                 <td>{{ patient.patientInitials }}</td>
@@ -27,6 +27,7 @@
                 <td>
                     <a class="btn btn-primary"
                        ui-sref="patientEdit.info({patientId: patient.patientId})">
+                        <i class="fa fa-pencil"></i>
                         Edit
                     </a>
                 </td>

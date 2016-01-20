@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <title>Patient Management</title>
 
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
     <!-- Style sheets -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <link href="css/toastr.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet"/>
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="bower_components/animate.css/animate.min.css">
+    <link href="css/toastr.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 
     <!-- Library Scripts -->
     <script src="js/jquery.js"></script>
     <script src="js/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="js/angular-resource.js"></script>
     <script src="js/angular-mocks.js"></script>
     <script src="js/angular-ui-router.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>-->
     <script src="js/ui-utils.js"></script>
     <script src="js/ui-bootstrap-tpls-0.11.0.js"></script>
     <script src="js/toastr.js"></script>
@@ -59,11 +63,23 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a ui-sref="patientList">Patient List</a></li>
-                    <li><a ui-sref="patientEdit.info({patientId:0})">
-                        <i class="glyphicon glyphicon-plus"></i>
-                        Add Patient</a></li>
-                    <li><a ui-sref="outcomeAnalytics">Outcome Analytics</a></li>
+                    <li>
+                        <a ui-sref="patientList">
+                            <i class="fa fa-list"></i> Patient List
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="patientEdit.info({patientId:0})">
+                            <i class="fa fa-plus"></i>
+                            Add Patient
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="outcomeAnalytics">
+                            <i class="fa fa-bar-chart"></i>
+                            Outcome Analytics
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

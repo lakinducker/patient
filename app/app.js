@@ -11,18 +11,7 @@
             "angularCharts",
             "patientResourceMock"]);
 
-    app.config(function ($provide) {
-        $provide.decorator("$exceptionHandler",
-            ["$delegate",
-                function ($delegate) {
-                    return function (exception, cause) {
-                        exception.message = "Please contact the Help Desk! \n Message: " +
-                                                                exception.message;
-                        $delegate(exception, cause);
-                        alert(exception.message);
-                    };
-                }]);
-    });
+
 
     app.config(["$stateProvider",
             "$urlRouterProvider",
@@ -31,12 +20,12 @@
 
                 $stateProvider
                     .state("home", {
-                        url: "/",
+                        url: "/home",
                         templateUrl: "app/welcomeView.html"
                     })
                     // Patients
                     .state("patientList", {
-                        url: "/patients",
+                        url: "/",
                         templateUrl: "app/patients/patientListView.html",
                         controller: "PatientListCtrl as vm"
                     })
@@ -71,7 +60,7 @@
                         templateUrl: "app/patients/patientEdit6MonthView.html"
                     })
                     .state("patientEdit.12month", {
-                        url: "/6month",
+                        url: "/12month",
                         templateUrl: "app/patients/patientEdit12MonthView.html"
                     })
                     .state("patientDetail", {

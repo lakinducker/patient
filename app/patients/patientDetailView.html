@@ -8,31 +8,44 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-3">ID:</div>
-                    <div class="col-md-6">{{vm.patient.patientId}}</div>
+                    <div class="col-md-9">{{vm.patient.patientId}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Initials:</div>
-                    <div class="col-md-6">{{vm.patient.patientInitials}}</div>
+                    <div class="col-md-9">{{vm.patient.patientInitials}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Rand:</div>
-                    <div class="col-md-6">{{vm.patient.randomization}}</div>
+                    <div class="col-md-9">{{vm.patient.randomization}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Surgery:</div>
-                    <div class="col-md-6">{{vm.patient.surgeryDate|date}}</div>
+                    <div class="col-md-9">{{vm.patient.surgeryDate|date}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Diagnosis:</div>
-                    <div class="col-md-6">{{vm.patient.diagnosis}}</div>
+                    <div class="col-md-9">
+                        <span ng-if="vm.patient.diagnosis == 1">Disc failure or prolapse</span>
+                        <span ng-if="vm.patient.diagnosis == 2">Osteophytic spondylosis</span>
+                        <span ng-if="vm.patient.diagnosis == 3">Trauma induced instability</span>
+                        <span ng-if="vm.patient.diagnosis == 4">Pseudoarthrosis</span>
+                        <span ng-if="vm.patient.diagnosis == 5">Other</span>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Nurick:</div>
-                    <div class="col-md-6">{{vm.patient.nurick}}</div>
+                    <div class="col-md-9">Grade {{vm.patient.nurick}}:
+                        <span ng-if="vm.patient.nurick == 0">No myelopathy signs</span>
+                        <span ng-if="vm.patient.nurick == 1">Myelopathy signs only</span>
+                        <span ng-if="vm.patient.nurick == 2">Slight difficulty walking</span>
+                        <span ng-if="vm.patient.nurick == 3">Walking difficulty and can't work</span>
+                        <span ng-if="vm.patient.nurick == 4">Needs frame walker</span>
+                        <span ng-if="vm.patient.nurick == 5">Bedridden</span>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Levels:</div>
-                    <div class="col-md-6">
+                    <div class="col-md-9">
                         <span ng-if="vm.patient.L1L2">L1-L2<br></span>
                         <span ng-if="vm.patient.L2L3">L2-L3<br></span>
                         <span ng-if="vm.patient.L3L4">L3-L4<br></span>
@@ -42,48 +55,48 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">OR Time:</div>
-                    <div class="col-md-6">{{vm.patient.or_time}} min.</div>
+                    <div class="col-md-9">{{vm.patient.or_time}} min.</div>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-3">ODI Pre:</div>
-                    <div class="col-md-6">{{vm.patient.odi_00}}</div>
+                    <div class="col-md-9">{{vm.patient.odi_00}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">ODI 6m:</div>
-                    <div class="col-md-6">{{vm.patient.odi_06}}</div>
+                    <div class="col-md-9">{{vm.patient.odi_06}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">ODI 12m:</div>
-                    <div class="col-md-6">{{vm.patient.odi_12}}<br><br></div>
+                    <div class="col-md-9">{{vm.patient.odi_12}}<br><br></div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-3">Back VAS Pre:</div>
-                    <div class="col-md-6">{{vm.patient.vas_back_00}}</div>
+                    <div class="col-md-9">{{vm.patient.vas_back_00}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Back VAS 6m:</div>
-                    <div class="col-md-6">{{vm.patient.vas_back_06}}</div>
+                    <div class="col-md-9">{{vm.patient.vas_back_06}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Back VAS 12m:</div>
-                    <div class="col-md-6">{{vm.patient.vas_back_12}}<br><br></div>
+                    <div class="col-md-9">{{vm.patient.vas_back_12}}<br><br></div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-3">Leg VAS Pre:</div>
-                    <div class="col-md-6">{{vm.patient.vas_leg_00}}</div>
+                    <div class="col-md-9">{{vm.patient.vas_leg_00}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Leg VAS 6m:</div>
-                    <div class="col-md-6">{{vm.patient.vas_leg_06}}</div>
+                    <div class="col-md-9">{{vm.patient.vas_leg_06}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Leg VAS 12m:</div>
-                    <div class="col-md-6">{{vm.patient.vas_leg_12}}</div>
+                    <div class="col-md-9">{{vm.patient.vas_leg_12}}</div>
                 </div>
 
 

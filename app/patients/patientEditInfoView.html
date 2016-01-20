@@ -1,11 +1,11 @@
-<form class="form-horizontal" name="patientForm"
+<form class="form-horizontal" name="patientInfoForm"
       novalidate>
     <fieldset>
         <legend>Basic Patient Information</legend>
 
         <div class="form-group"
-             ng-class="{'has-error':patientForm.inputPatientInitials.$invalid &&
-                                    patientForm.inputPatientInitials.$dirty}">
+             ng-class="{'has-error':patientInfoForm.inputPatientInitials.$invalid &&
+                                    patientInfoForm.inputPatientInitials.$touched}">
             <label class="col-md-2 control-label" for="inputPatientInitials">Initials</label>
 
             <div class="col-md-4">
@@ -16,10 +16,12 @@
                        ng-model="vm.patient.patientInitials"
                        required>
             </div>
-            <span class="help-block has-error"
-                  ng-show="patientForm.inputPatientCode.$invalid ">
-                    Patient Initials are required
-            </span>
+            <ng-messages class="text-danger animated pulse"
+                         for="eventForm.start.$error"
+                         ng-if="patientInfoForm.inputPatientInitials.$invalid &&
+                                patientInfoForm.inputPatientInitials.$touched">
+              <ng-message when="required" class="error">Patient Initials are required.</ng-message>
+            </ng-messages>
         </div>
 
 
@@ -51,7 +53,7 @@
                 </div>
             </div>
             <span class="help-block has-error"
-                  ng-show="patientForm.imageUrl.$invalid ">
+                  ng-show="patientInfoForm.randomization.$invalid ">
                     Randomization is required
             </span>
         </div>
@@ -61,8 +63,8 @@
                     <span>
                         <button class="btn btn-primary"
                                 style="width:80px;margin-right:10px"
-                                ng-click="vm.submit(patientForm.$valid)"
-                                ng-disabled="patientForm.$invalid">
+                                ng-click="vm.submit(patientInfoForm.$valid)"
+                                ng-disabled="patientInfoForm.$invalid">
                             Save
                         </button>
                     </span>

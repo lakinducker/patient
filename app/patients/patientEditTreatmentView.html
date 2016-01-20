@@ -2,7 +2,9 @@
       novalidate>
     <fieldset>
         <legend>Treatment</legend>
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{'has-error':eventForm.patientTreatmentForm.$invalid &&
+                                    eventForm.patientTreatmentForm.$touched}">
             <label class="col-md-2 control-label"
                    for="inputSurgeryDate">Surgery Date</label>
 
@@ -22,12 +24,22 @@
                         </button>
                     </span>
                 </div>
+                <span class="help-block has-error"
+                      ng-if="patientTreatmentForm.inputStartDate.$touched"
+                      ng-messages="patientTreatmentForm.inputStartDate.$error">
+                    <span ng-message="required">
+                        Surgery Date is required.
+                    </span>
+                    <span ng-message="date">
+                        Surgery Date must be a valid date.
+                    </span>
+                </span>
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-md-2 control-label"
-                   for="inputLevelsCheckboxes">Surgery Date</label>
+                   for="inputLevelsCheckboxes">Levels</label>
 
             <div class="col-md-4" id="inputLevelsCheckboxes">
                 <div class="input-group">

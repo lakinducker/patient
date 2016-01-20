@@ -36,6 +36,7 @@
             if (isValid) {
                 vm.patient.$save(function (data) {
                     toastr.success("Save Successful");
+                    $state.go('patientList');
                 })
             } else {
                 alert("Please correct the validation errors first.");
